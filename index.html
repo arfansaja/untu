@@ -308,7 +308,7 @@ body {
   
     <div class="cards">
       <div class="card">
-        <img src="udp.jpeg" alt="config udp zivpn">
+        <img src="udp.jpeg" alt="Config udp zivpn">
         <h3>config udp zivpn</h3>
         <h3>deskripsi</h3>
           <ul>
@@ -318,11 +318,11 @@ body {
             <li>tkp banten</li>
             <li>exp: 30 day</li>
         <h3>Rp10.000</h3>
-        <button onclick="beli('Buku 1', 'Rp10.000', this)">Beli</button>
-        <img class="barcode" src="barcode1.png" alt="Barcode Buku 1">
+        <button onclick="beli('Config udp zivpn', 'Rp10.000', this)">Beli</button>
+        <img class="barcode" src="barcode1.png" alt="Barcode Config udp zivpn">
       </div>
       <div class="card">
-        <img src="config.jpg" alt="config xl & axis edukasi">
+        <img src="config.jpg" alt="Config xl & axis edukasi">
         <h3>config xl & axis edukasi</h3>
         <h3>deskripsi</h3>
           <ul>
@@ -330,11 +330,11 @@ body {
             <li>tkp jateng</li>
             <li>exp: 30 day</li>
         <p>Rp10.000</p>
-        <button onclick="beli('Buku 2', 'Rp10.000', this)">Beli</button>
-        <img class="barcode" src="barcode2.png" alt="Barcode Buku 2">
+        <button onclick="beli('Config xl & axis edukasi', 'Rp10.000', this)">Beli</button>
+        <img class="barcode" src="barcode2.png" alt="Barcode Config xl & axis edukasi">
       </div>
       <div class="card">
-        <img src="config.jpg" alt="config xl & axis confrence">
+        <img src="config.jpg" alt="Config xl & axis confrence">
         <h3>config xl & axis confrence</h3>
         <h3>deskripsi</h3>
         <ul>
@@ -342,8 +342,8 @@ body {
           <li>tkp jateng</li>
           <li>exp: 30 day</li>
         <h3>Rp10.000</h3>
-        <button onclick="beli('Buku 3', 'Rp10.000', this)">Beli</button>
-        <img class="barcode" src="barcode3.png" alt="Barcode Buku 3">
+        <button onclick="beli('Config xl & axis confrence', 'Rp10.000', this)">Beli</button>
+        <img class="barcode" src="barcode3.png" alt="Barcode Config xl & axis confrence">
       </div>
     </div>
   </div>
@@ -358,9 +358,9 @@ body {
       document.getElementById(menuId).classList.add('active');
     }
 
-    function beli(namaBuku, harga, button) {
+    function beli(namaConfig, harga, button) {
       let nomorWA = '628123456789';
-      let pesan = `Halo Admin, saya ingin membeli config:\n\nJudul: ${config}\nHarga: ${harga}`;
+      let pesan = `Halo Admin, saya ingin membeli config:\n\nJudul: ${namaConfig}\nHarga: ${harga}`;
       window.open(`https://wa.me/${6287712425327}?text=${encodeURIComponent(pesan)}`, '_blank');
       let barcode = button.nextElementSibling;
       barcode.style.display = 'block';
@@ -368,6 +368,7 @@ body {
   </script>
 </body>
 </html>
+
 
 
 

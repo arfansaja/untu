@@ -96,6 +96,189 @@
       width: 100%;
     }
 
+    /* RESET dan FONT */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    padding: 20px;
+}
+
+/* CONTAINER UTAMA */
+.package-list {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* JUDUL BAGIAN */
+.section-title {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #007bff; /* Warna biru cerah untuk judul */
+    text-align: center;
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #007bff;
+    letter-spacing: 1px;
+}
+
+/* CONTAINER KARTU PAKET */
+.package-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* KARTU PAKET INDIVIDUAL */
+.package-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    width: calc(33.33% - 20px); /* 3 kartu per baris pada desktop */
+    min-width: 300px; /* Lebar minimum untuk kartu */
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* HEADER PAKET */
+.package-header {
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.package-name {
+    font-size: 1.25em;
+    font-weight: 600;
+    color: #333;
+}
+
+.package-price {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #28a745; /* Harga dalam warna hijau */
+    background-color: #e6f7eb;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* DETAIL PAKET */
+.package-details {
+    font-size: 0.95em;
+    flex-grow: 1; /* Memastikan semua detail menggunakan ruang yang tersedia */
+}
+
+.package-details h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #007bff;
+    font-weight: 600;
+}
+
+.package-details p {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.package-details ul {
+    list-style: none; /* Hilangkan bullet default */
+    padding-left: 0;
+    margin-bottom: 15px;
+}
+
+.package-details ul li {
+    padding-left: 1.5em;
+    text-indent: -1.5em;
+    margin-bottom: 4px;
+}
+
+/* Bullet kustom */
+.package-details ul li::before {
+    content: "•";
+    color: #ffc107; /* Bullet kuning */
+    font-weight: bold;
+    display: inline-block;
+    width: 1.5em;
+    margin-left: -1.5em;
+}
+
+/* Catatan Khusus */
+.important-note {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 0 auto 30px;
+    max-width: 800px;
+}
+
+.note-header {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #dc3545; /* Merah untuk peringatan */
+    margin-bottom: 5px;
+}
+
+.important-note ol, .important-note ul {
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+/* KARTU YANG DITONJOLKAN (HIGHLIGHT) */
+.package-card.highlight {
+    border-color: #007bff;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+    background-color: #eaf3ff;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    .package-card {
+        width: calc(50% - 20px); /* 2 kartu per baris pada tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    .section-title {
+        font-size: 1.8em;
+        margin: 30px 0 15px;
+    }
+    .package-card {
+        width: 100%; /* 1 kartu per baris pada ponsel */
+        min-width: unset;
+    }
+    .package-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .package-price {
+        margin-top: 5px;
+    }
+}
+
     @media (max-width: 600px) {
       nav { flex-direction: column; }
       .logo { position: static; margin-top: 0.5rem; }
@@ -109,81 +292,58 @@
 </head>
 <body>
   <nav>
-    <div><a onclick="showMenu('beranda')">Beranda</a><a onclick="showMenu('riwayat')">Riwayat Pembelian</a></div>
-    <img src="logo.png" alt="Logo" class="logo">
+    <div><a onclick="showMenu('beranda')">Beranda</a><a onclick="showMenu('riwayat')">Riwayat transaksi</a></div>
+    <img src="logo.jpeg" alt="Logo" class="logo">
   </nav>
 
   <div id="beranda" class="menu active">
+    <body>
+
+      <main class="package-list">
+        <ol>
+          <section class="package-section akrab">
+              <h2 class="section-title">CONFIG PREMIUM</h2>
+            </ol>
+              
+  
     <div class="cards">
       <div class="card">
-        <img src="buku1.jpg" alt="Buku 1">
-        <h3>Buku 1</h3>
-        <p>Rp15.000</p>
-        <button onclick="beli('Buku 1', 'Rp15.000', this)">Beli</button>
+        <img src="udp.jpeg" alt="config 1">
+        <h3>config udp zivpn</h3>
+        <h3>deskripsi</h3>
+          <ul>
+            <li>menggunakan apk zivpn</li>
+            <li>tkp jabar</li>
+            <li>tkp jatotabek</li>
+            <li>tkp banten</li>
+            <li>exp: 30 day</li>
+        <h3>Rp10.000</h3>
+        <button onclick="beli('Buku 1', 'Rp10.000', this)">Beli</button>
         <img class="barcode" src="barcode1.png" alt="Barcode Buku 1">
       </div>
       <div class="card">
-        <img src="buku2.jpg" alt="Buku 2">
-        <h3>Buku 2</h3>
-        <p>Rp18.000</p>
-        <button onclick="beli('Buku 2', 'Rp18.000', this)">Beli</button>
+        <img src="config.jpeg" alt="config 2">
+        <h3>config xl & axis edukasi</h3>
+        <h3>deskripsi</h3>
+          <ul>
+            <li>menggunakan apk hc</li>
+            <li>tkp jateng</li>
+            <li>exp: 30 day</li>
+        <p>Rp10.000</p>
+        <button onclick="beli('Buku 2', 'Rp10.000', this)">Beli</button>
         <img class="barcode" src="barcode2.png" alt="Barcode Buku 2">
       </div>
       <div class="card">
-        <img src="buku3.jpg" alt="Buku 3">
-        <h3>Buku 3</h3>
-        <p>Rp20.000</p>
-        <button onclick="beli('Buku 3', 'Rp20.000', this)">Beli</button>
+        <img src="config.jpeg" alt="config 3">
+        <h3>config xl & axis confrence</h3>
+        <h3>deskripsi</h3>
+        <ul>
+          <li>menggunakan apk hc</li>
+          <li>tkp jateng</li>
+          <li>exp: 30 day</li>
+        <h3>Rp10.000</h3>
+        <button onclick="beli('Buku 3', 'Rp10.000', this)">Beli</button>
         <img class="barcode" src="barcode3.png" alt="Barcode Buku 3">
-      </div>
-      <div class="card">
-        <img src="buku4.jpg" alt="Buku 4">
-        <h3>Buku 4</h3>
-        <p>Rp22.000</p>
-        <button onclick="beli('Buku 4', 'Rp22.000', this)">Beli</button>
-        <img class="barcode" src="barcode4.png" alt="Barcode Buku 4">
-      </div>
-      <div class="card">
-        <img src="buku5.jpg" alt="Buku 5">
-        <h3>Buku 5</h3>
-        <p>Rp25.000</p>
-        <button onclick="beli('Buku 5', 'Rp25.000', this)">Beli</button>
-        <img class="barcode" src="barcode5.png" alt="Barcode Buku 5">
-      </div>
-      <div class="card">
-        <img src="buku6.jpg" alt="Buku 5">
-        <h3>Buku 5</h3>
-        <p>Rp25.000</p>
-        <button onclick="beli('Buku 5', 'Rp25.000', this)">Beli</button>
-        <img class="barcode" src="barcode5.png" alt="Barcode Buku 5">
-      </div>
-      <div class="card">
-        <img src="buku7.jpg" alt="Buku 5">
-        <h3>Buku 5</h3>
-        <p>Rp25.000</p>
-        <button onclick="beli('Buku 5', 'Rp25.000', this)">Beli</button>
-        <img class="barcode" src="barcode5.png" alt="Barcode Buku 5">
-      </div>
-      <div class="card">
-        <img src="roby.jpeg" alt="Buku 5">
-        <h3>Buku 5</h3>
-        <p>Rp25.000</p>
-        <button onclick="beli('Buku 5', 'Rp25.000', this)">Beli</button>
-        <img class="barcode" src="barcode5.png" alt="Barcode Buku 5">
-      </div>
-      <div class="card">
-        <img src="buku9.jpg" alt="Buku 5">
-        <h3>Buku 5</h3>
-        <p>Rp25.000</p>
-        <button onclick="beli('Buku 5', 'Rp25.000', this)">Beli</button>
-        <img class="barcode" src="barcode5.png" alt="Barcode Buku 5">
-      </div>
-      <div class="card">
-        <img src="buku10.jpg" alt="Buku 5">
-        <h3>Buku 5</h3>
-        <p>Rp25.000</p>
-        <button onclick="beli('Buku 5', 'Rp25.000', this)">Beli</button>
-        <img class="barcode" src="barcode5.png" alt="Barcode Buku 5">
       </div>
     </div>
   </div>
@@ -200,8 +360,8 @@
 
     function beli(namaBuku, harga, button) {
       let nomorWA = '628123456789';
-      let pesan = `Halo Admin, saya ingin membeli buku berikut:\n\nJudul: ${namaBuku}\nHarga: ${harga}`;
-      window.open(`https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`, '_blank');
+      let pesan = `Halo Admin, saya ingin membeli config:\n\nJudul: ${namaBuku}\nHarga: ${harga}`;
+      window.open(`https://wa.me/${6287712425327}?text=${encodeURIComponent(pesan)}`, '_blank');
       let barcode = button.nextElementSibling;
       barcode.style.display = 'block';
     }
